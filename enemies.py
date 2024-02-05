@@ -6,7 +6,7 @@ class enemies(pygame.sprite.Sprite):
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)
         self.assets = ['sprites/enemies/kaktus1.png', 'sprites/enemies/kaktus2.png',
-                       'sprites/enemies/kaktus3.png', 'sprites/enemies/kaktus4.png', 'sprites/enemies/tony1.png',
+                       'sprites/enemies/kaktus3.png', 'sprites/enemies/kaktus4.png',
                        'sprites/enemies/ptero/ptero_1.png']
         self.enemy = random.choice(self.assets)
         self.image = pygame.image.load(self.enemy)
@@ -25,7 +25,7 @@ class enemies(pygame.sprite.Sprite):
                          pygame.image.load('sprites/enemies/ptero/ptero_8.png')]
 
     def start_position(self):
-        self.rect.x = -1000
+        self.rect.x = -1500
         self.update()
 
     def anim(self):
@@ -35,10 +35,7 @@ class enemies(pygame.sprite.Sprite):
 
     def update(self):
         if self.enemy != 'sprites/enemies/ptero/ptero_1.png':
-            if self.enemy == "sprites/enemies/tony1.png":
-                self.rect.bottom = 690
-            if self.enemy != "sprites/enemies/tony1.png":
-                self.rect.bottom = 579
+            self.rect.bottom = 579
             self.rect.x -= 20
             if self.rect.x < -random.randint(1000, 5000):
                 self.enemy = random.choice(self.assets)
