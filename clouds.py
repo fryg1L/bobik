@@ -10,12 +10,12 @@ class cloud(pygame.sprite.Sprite):
         self.image = pygame.image.load(self.enemy)
         self.rect = self.image.get_rect()
         self.mask = pygame.mask.from_surface(self.image)
-        self.rect.bottom = random.randint(100, 150)
+        self.rect.bottom = random.randint(100, 200)
         self.rect.x = 1200
 
     def update(self):
         self.rect.x -= 10
-        if self.rect.x < -random.randint(1000, 1300):
+        if self.rect.x < -random.randint(1000, 1500):
             self.enemy = random.choice(self.assets)
             self.image = pygame.image.load(self.enemy)
             self.rect.x = 1300
